@@ -1,15 +1,19 @@
-# Beta Console Deploy Script
+# Beta Console App Script
 
 A [Google Apps Script](https://developers.google.com/apps-script/overview) for
 the [Beta Programs Google
 Sheet](https://docs.google.com/spreadsheets/d/10SJbUuMWgc-ACOzNydXL16vE_fDwJIP92G4_L8XUhrQ/edit)
-which triggers the [GitHub Action](https://github.com/consoledotdev/betaconsole/actions?query=workflow%3ADeploy)
-that will deploy the
-[Beta Console site](https://github.com/consoledotdev/betaconsole). This makes
-it easy for anyone to deploy the latest beta list. It uses a [GitHub Personal
-Access token](https://github.com/settings/tokens) and basic authentication with
-the GitHub REST API. Credentials are stored in the [Properties
-Service](https://developers.google.com/apps-script/guides/properties).
+which shows two menus in the Beta Programs Google Sheet:
+
+1. **Deploy:** Makes it easy to trigger the [GitHub
+   Action](https://github.com/consoledotdev/betaconsole/actions?query=workflow%3ADeploy)
+   that deploys the [Beta Console
+   site](https://github.com/consoledotdev/betaconsole). It uses a [GitHub
+   Personal Access token](https://github.com/settings/tokens) and basic
+   authentication with the GitHub REST API. Credentials are stored in the
+   [Properties
+   Service](https://developers.google.com/apps-script/guides/properties).
+2. **Newsletter:** Get the HTML code to copy into the MailChimp template.
 
 ## Local development
 

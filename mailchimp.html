@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <? var data = getData(); ?>
+    <? if (Array.isArray(data) && data.length) { ?>
+    <p>Copy the code below into a Code block in the MailChimp editor:</p>
+    <textarea id="code" name="code" rows="5" cols="50">
+<div class="mcnTextContent">
+<? for (var row in data) { ?>
+<h2><?= data[row][0]; ?></h2>
+<? } ?>
+</div>
+    </textarea>
+    <? } else { ?>
+    <p>No items scheduled.</p>
+    <? } ?>
+  </body>
+</html>

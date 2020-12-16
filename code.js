@@ -1,8 +1,10 @@
 /**
- * Beta Console Deploy App Script
+ * Beta Console App Script
  *
- * Shows a menu in the Beta Programs Google Sheet to make it easy to trigger
- * the GitHub action that deploys the site.
+ * Shows two menus in the Beta Programs Google Sheet to:
+ *
+ * 1) Deploy: Make it easy to trigger the GitHub action that deploys the site.
+ * 2) Newsletter: Get the HTML code to copy into the MailChimp template.
  *
  */
 
@@ -11,12 +13,24 @@
  */
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
+
+  // Deploy menu
   ui.createMenu('Deploy')
     .addItem('Deploy to test', 'deployTest')
     .addItem('Deploy to production', 'deployProd')
     .addToUi();
+
+  // Newsletter meny
+  ui.createMenu('Newsletter')
+    .addItem('Get MailChimp code', 'getMCCode')
+    .addToUi();
 }
 
+/**
+ * Deploy
+ */
+
+// Menu functions
 function deployTest() {
   var result = deploy("test");
 
@@ -30,9 +44,7 @@ function deployProd() {
     .alert('Deploying to production is not allowed yet!');
 }
 
-/**
- * Authorizes and makes a request to the GitHub API.
- */
+// Issue the GitHub API call
 function deploy(environment) {
   // PropertiesService to store the token
   var userProperties = PropertiesService.getUserProperties();
@@ -99,5 +111,71 @@ function deploy(environment) {
     }
 
     return false
+  }
+}
+
+/**
+ * Newsletter
+ */
+
+// Menu functions
+function getMCCode() {
+  // Create HTML from template
+  var html = HtmlService
+    .createTemplateFromFile('mailchimp')
+    .evaluate()
+    .setHeight(170);
+
+  // Build title
+  var title = 'Mailchimp code for ' + getNextThurs();
+
+  // Show modal
+  SpreadsheetApp
+    .getUi()
+    .showModalDialog(html, title);
+}
+
+function getData() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  // https://developers.google.com/apps-script/reference/spreadsheet/sheet#getrangea1notation
+  var range = spreadsheet.getRange("All Programs!A2:J31"); // First 30 rows
+  var values = range.getValues();
+
+  var newsletterDate = getNextThurs(true);
+  var betaPrograms = [];
+
+  for (var row in values) {
+    var scheduledFor = new Date(values[row][4]);
+
+    // Only show the ones scheduled for the next newsletter
+    if (scheduledFor.getUTCFullYear() == newsletterDate.getUTCFullYear()
+        && scheduledFor.getUTCMonth() == newsletterDate.getUTCMonth()
+        && scheduledFor.getUTCDate() == newsletterDate.getUTCDate()) {
+          Logger.log('Selecting: ' + values[row]);
+          betaPrograms.push(values[row])
+    }
+  }
+
+  return betaPrograms;
+}
+
+function getNextThurs(asDate = false) {
+  var resultDate = new Date();
+
+  // To get the next occurrance of a particular day of the week:
+  // https://stackoverflow.com/a/1579109
+  var thursday = 4; // Thursday
+  var now = new Date();
+  resultDate.setDate(now.getDate() + (thursday + (7 - now.getDay())) % 7);
+
+  if (asDate) {
+    return resultDate;
+  } else {
+    // To add leading zeros: https://stackoverflow.com/a/1579109
+    return resultDate.getFullYear()
+      + '-'
+      + ('0' + (resultDate.getMonth() + 1)).slice(-2)
+      + '-'
+      + ('0' + resultDate.getDate()).slice(-2);
   }
 }
