@@ -1,9 +1,9 @@
-# Beta Console App Script
+# Beta Console Apps Script
 
 A [Google Apps Script](https://developers.google.com/apps-script/overview) for
 the [Beta Programs Google
 Sheet](https://docs.google.com/spreadsheets/d/10SJbUuMWgc-ACOzNydXL16vE_fDwJIP92G4_L8XUhrQ/edit)
-which shows two menus in the Beta Programs Google Sheet:
+which shows two custom menus:
 
 1. **Deploy:** Makes it easy to trigger the [GitHub
    Action](https://github.com/consoledotdev/betaconsole/actions?query=workflow%3ADeploy)
@@ -32,5 +32,4 @@ within the sheet but using `clasp` is preferred.
 
 ## Debugging
 
-Check the live [Apps Script
-dashboard](https://script.google.com/home/projects/1FCVykdTwjxzM_iwFmQI6yn2HplwZltzccOLUphqoiAKTbP1u7aWUpmCO/executions?run_as=1).
+Check the live [Apps Script dashboard](https://script.google.com/home/all).

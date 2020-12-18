@@ -1,5 +1,5 @@
 /**
- * Beta Console App Script
+ * Beta Console Apps Script
  *
  * Shows two menus in the Beta Programs Google Sheet to:
  *
@@ -124,7 +124,7 @@ function getMCCode() {
   var html = HtmlService
     .createTemplateFromFile('mailchimp')
     .evaluate()
-    .setHeight(170);
+    .setHeight(180);
 
   // Build title
   var title = 'Mailchimp code for ' + getNextThurs();
@@ -138,7 +138,7 @@ function getMCCode() {
 function getData() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   // https://developers.google.com/apps-script/reference/spreadsheet/sheet#getrangea1notation
-  var range = spreadsheet.getRange("All Programs!A2:J31"); // First 30 rows
+  var range = spreadsheet.getRange("All Programs!A2:K31"); // First 30 rows
   var values = range.getValues();
 
   var newsletterDate = getNextThurs(true);
