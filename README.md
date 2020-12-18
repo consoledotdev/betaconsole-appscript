@@ -13,7 +13,8 @@ which shows two custom menus:
    authentication with the GitHub REST API. Credentials are stored in the
    [Properties
    Service](https://developers.google.com/apps-script/guides/properties).
-2. **Newsletter:** Get the HTML code to copy into the MailChimp template.
+2. **Newsletter:** Get the HTML code to copy into the MailChimp template. Uses
+   [lib-mailchimphtml](https://github.com/consoledotdev/lib-mailchimphtml).
 
 ## Local development
 
