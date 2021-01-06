@@ -1,7 +1,7 @@
 # Beta Console Apps Script
 
 A [Google Apps Script](https://developers.google.com/apps-script/overview) for
-the [Beta Programs Google
+the [Console](https://console.dev) [Beta Programs Google
 Sheet](https://docs.google.com/spreadsheets/d/10SJbUuMWgc-ACOzNydXL16vE_fDwJIP92G4_L8XUhrQ/edit)
 which shows two custom menus:
 
@@ -17,6 +17,12 @@ which shows two custom menus:
     1. Get the HTML code to copy into the MailChimp template. Uses
     [lib-mailchimphtml](https://github.com/consoledotdev/lib-mailchimphtml).
     2. Create draft Tweets.
+
+## Open development
+
+This repository is public, but is not currently open source. We have opened the
+repo to give a view into how we run [Console](https://console.dev) rather than
+for it to be independent, release-quality code.
 
 ## Local development
 
