@@ -110,7 +110,6 @@ function deploy(environment) {
     if (button == ui.Button.OK) {
       userProperties.setProperty('GITHUB_TOKEN', newGithubToken);
     }
-mailchimp
     return false
   }
 }
