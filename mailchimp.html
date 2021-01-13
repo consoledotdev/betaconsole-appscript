@@ -4,15 +4,15 @@
     <base target="_top">
   </head>
   <body>
-    <? var data = LibMailchimpHTML.getData('All Programs!A1:K31'); ?>
+    <? var data = LibMailchimpHTML.getData('All Programs!A1:L31'); ?>
     <? if (Array.isArray(data) && data.length) { ?>
     <p>Copy the code below into the code section of a text block in the
     MailChimp editor:</p>
     <textarea id="code" name="code" rows="5" cols="50">
 <? for (var row in data) { ?>
-<h2><a href="<?= data[row][5]; ?>"><?= data[row][1]; ?></a>, from <?= data[row][0]; ?></h2>
-<p><em><?= data[row][6]; ?></em></p>
-<p><?= data[row][8]; ?>. <?= data[row][9]; ?>. <?= data[row][10]; ?> access.</p>
+<h2><a href="<?= data[row][6]; ?>"><?= data[row][1]; ?></a>, from <?= data[row][0]; ?></h2>
+<p><em><?= data[row][7]; ?></em></p>
+<p><?= data[row][9]; ?>. <?= data[row][10]; ?>. <?= data[row][11]; ?> access.</p>
 <hr style="border: none; border-top: 2px solid #eaeaea; padding-top: 10px; padding-bottom:0px" />
 <? } ?>
     </textarea>
