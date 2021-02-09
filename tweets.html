@@ -12,7 +12,7 @@
     See existing Scheduled Tweets</a>.</p>
     <ul>
         <? for (var row in data) { ?>
-            <? var text = "New beta: " + data[row]['URL'].trim();
+            <? var text = "New beta: " + data[row]['URL'];
                if (data[row]['Twitter']) {
                    text += " by " + data[row]['Twitter'].trim()
                }
