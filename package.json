@@ -1,0 +1,12 @@
+{
+    "name": "betaconsole-appscript",
+    "author": "David Mytton <david@davidmytton.co.uk>",
+    "description": "A Google Apps Script for the Console Beta Programs Google Sheet",
+    "license": "None",
+    "repository": "github:consoledotdev/betaconsole-appscript",
+    "version": "0.1.0",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "2.2.1"
+    }
+}

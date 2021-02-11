@@ -15,7 +15,7 @@ which shows two custom menus:
    Service](https://developers.google.com/apps-script/guides/properties).
 2. **Newsletter:**
     1. Get the HTML code to copy into the MailChimp template. Uses
-    [lib-mailchimphtml](https://github.com/consoledotdev/lib-mailchimphtml).
+       [lib-mailchimphtml](https://github.com/consoledotdev/lib-mailchimphtml).
     2. Create draft Tweets.
 
 ## Open development
