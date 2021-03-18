@@ -3,17 +3,9 @@
 A [Google Apps Script](https://developers.google.com/apps-script/overview) for
 the [Console](https://console.dev) [Beta Programs Google
 Sheet](https://docs.google.com/spreadsheets/d/10SJbUuMWgc-ACOzNydXL16vE_fDwJIP92G4_L8XUhrQ/edit)
-which shows two custom menus:
+which shows custom menus:
 
-1. **Deploy:** Makes it easy to trigger the [GitHub
-   Action](https://github.com/consoledotdev/betaconsole/actions?query=workflow%3ADeploy)
-   that deploys the [Beta Console
-   site](https://github.com/consoledotdev/betaconsole). It uses a [GitHub
-   Personal Access token](https://github.com/settings/tokens) and basic
-   authentication with the GitHub REST API. Credentials are stored in the
-   [Properties
-   Service](https://developers.google.com/apps-script/guides/properties).
-2. **Newsletter:**
+1. **Newsletter:**
     1. Get the HTML code to copy into the MailChimp template. Uses
        [lib-mailchimphtml](https://github.com/consoledotdev/lib-mailchimphtml).
     2. Create draft Tweets.
