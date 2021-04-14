@@ -32,7 +32,7 @@ function getMCCode() {
     // Create HTML from template
     var html = HtmlService.createTemplateFromFile("mailchimp.html")
         .evaluate()
-        .setHeight(180);
+        .setHeight(350);
 
     // Build title
     var title = "Mailchimp code for " + LibMailchimpHTML.getNextThurs();
