@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <base target="_top" />
-    </head>
-    <body>
-        <? var data = LibMailchimpHTML.getData('All Programs!A:Q'); ?>
-        <? if (Array.isArray(data) && data.length) { ?>
-        <h3>Contents</h3>
-        <p>To be pasted in after interesting tools:</p>
-        <textarea id="code" name="code" rows="5" cols="50">
+
+<head>
+    <base target="_top" />
+</head>
+
+<body>
+    <? var data = LibMailchimpHTML.getData('All Programs!A:Q'); ?>
+    <? if (Array.isArray(data) && data.length) { ?>
+    <h3>Contents</h3>
+    <p>To be pasted in after interesting tools:</p>
+    <textarea id="code" name="code" rows="5" cols="50">
 <? for (var row in data) { ?>
-<p>🧪 <a href="<?= data[row]['URL']; ?>" style="color: #5269ff"><?= data[row]['Tool/Product/Project'].trim(); ?></a><? if (!data[row]['Tool/Product/Project'].includes(data[row]['Company/Org'])) { ?>, from <?= data[row]['Company/Org'].trim(); ?><? } ?> - <?= data[row]['What is it?'].trim(); ?></p>
+<span style="font-size:15px; width:0.5em"><em>&beta;&nbsp;&nbsp;</em></span><a href="<?= data[row]['URL']; ?>" target="_blank"><strong><?= data[row]['Tool/Product/Project'].trim(); ?></strong></a>&nbsp; &ndash;&nbsp;&nbsp;<?= data[row]['What is it?'].trim(); ?><br />
 <? } ?>
 </textarea>
-        <h3>Content</h3>
-        <textarea id="code" name="code" rows="5" cols="50">
+    <h3>Content</h3>
+    <textarea id="code" name="code" rows="5" cols="50">
 <? for (var row in data) { ?>
-<h2><a href="<?= data[row]['URL']; ?>"><?= data[row]['Tool/Product/Project'].trim(); ?></a><? if (!data[row]['Tool/Product/Project'].includes(data[row]['Company/Org'])) { ?>, from <?= data[row]['Company/Org'].trim(); ?><? } ?></h2>
-<p><em><?= data[row]['What is it?'].trim(); ?></em></p>
-<p><small>&bull; <?= data[row]['Category'].toUpperCase(); ?> &bull; <?= data[row]['Type'].toUpperCase(); ?> &bull; <?= data[row]['Access'].toUpperCase(); ?> ACCESS</small></p>
-<hr style="border: none; border-top: 2px solid #eaeaea; padding-top: 10px; padding-bottom:0px" />
+<h2><a href="<?= data[row]['URL']; ?>" target="_blank"><strong><?= data[row]['Tool/Product/Project'].trim(); ?></strong></a><? if (!data[row]['Tool/Product/Project'].includes(data[row]['Company/Org'])) { ?>, from <?= data[row]['Company/Org'].trim(); ?><? } ?></h2>
+
+<h4><em><?= data[row]['What is it?'].trim(); ?></em></h4>
+<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><?= data[row]['Category']; ?>, <?= data[row]['Type']; ?>, <?= data[row]['Access']; ?> Access</span>
+
+<hr style="border: none; border-top: none; padding-top: 6px;" />
 <? } ?>
 </textarea>
-        <? } else { ?>
-        <p>No items scheduled.</p>
-        <? } ?>
-    </body>
+    <? } else { ?>
+    <p>No items scheduled.</p>
+    <? } ?>
+</body>
+
 </html>
