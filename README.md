@@ -28,10 +28,16 @@ within the sheet but using `clasp` is preferred.
 2. Clone this repo.
 3. Ensure you have the latest copy of the code by cloning into the repo:
 
-`gclasp clone 1FCVykdTwjxzM_iwFmQI6yn2HplwZltzccOLUphqoiAKTbP1u7aWUpmCO`
+```
+clasp login
+clasp clone 1FCVykdTwjxzM_iwFmQI6yn2HplwZltzccOLUphqoiAKTbP1u7aWUpmCO
+```
 
-3. Push any changes up to the live version: `clasp push` or have it watch for
-   changes with `clasp push --watch`.
+3. Push any changes up to the live version: 
+```
+clasp push 1FCVykdTwjxzM_iwFmQI6yn2HplwZltzccOLUphqoiAKTbP1u7aWUpmCO
+``` 
+or have it watch for changes with `clasp push --watch`.
 
 ## Debugging
 
