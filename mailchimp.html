@@ -20,7 +20,7 @@
 <? for (var row in data) { ?>
 <h2><a href="<?= data[row]['URL']; ?>" target="_blank"><strong><?= data[row]['Tool/Product/Project'].trim(); ?></strong></a><? if (!data[row]['Tool/Product/Project'].includes(data[row]['Company/Org'])) { ?>, from <?= data[row]['Company/Org'].trim(); ?><? } ?></h2>
 
-<h4><em><?= data[row]['What is it?'].trim(); ?></em></h4>
+<h4><?= data[row]['What is it?'].trim(); ?></h4>
 <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><?= data[row]['Category']; ?>, <?= data[row]['Type']; ?>, <?= data[row]['Access']; ?> Access</span>
 
 <hr style="border: none; border-top: none; padding-top: 6px;" />
