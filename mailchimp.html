@@ -12,8 +12,19 @@
     <p>To be pasted in after interesting tools:</p>
     <textarea id="code" name="code" rows="5" cols="50">
 <? for (var row in data) { ?>
-<span style="font-size:15px; width:0.5em"><em>&beta;&nbsp;&nbsp;</em></span><a href="<?= data[row]['URL']; ?>" target="_blank"><strong><?= data[row]['Tool/Product/Project'].trim(); ?></strong></a>&nbsp; &ndash;&nbsp;&nbsp;<?= data[row]['What is it?'].trim(); ?><br />
+        <tr>
+			<td style="vertical-align: top; width: 12px;"><span style="display:block; font-size:15px; margin-left:2px; margin-right:4px; width:12px"><em>&beta;</em></span></td>
+			<td><a href="<?= data[row]['URL']; ?>" target="_blank"><strong><?= data[row]['Tool/Product/Project'].trim(); ?></strong></a> &ndash; <?= data[row]['What is it?'].trim(); ?></td>
+		</tr>
 <? } ?>
+<tr>
+    <td style="vertical-align: top; width: 12px;"><span style="display:block; font-size:16px; margin-left:2px; margin-right:4px; width:12px">&gt;</span></td>
+    <td><a href="https://podcast.console.dev" target="_blank"><strong>Podcast</strong></a> &ndash; Topic, with Guest (Org).</td>
+</tr>
+</tbody>
+</table>
+
+<hr style="border: none; border-top: none; padding-top: 6px; padding-bottom: 12px;" />
 </textarea>
     <h3>Content</h3>
     <textarea id="code" name="code" rows="5" cols="50">
@@ -23,7 +34,7 @@
 <h4><?= data[row]['What is it?'].trim(); ?></h4>
 <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><?= data[row]['Category']; ?>, <?= data[row]['Type']; ?>, <?= data[row]['Access']; ?> Access</span>
 
-<hr style="border: none; border-top: none; padding-top: 6px;" />
+<hr style="border: none; border-top: none; padding-top: 6px; padding-bottom: 12px;" />
 <? } ?>
 </textarea>
     <? } else { ?>
